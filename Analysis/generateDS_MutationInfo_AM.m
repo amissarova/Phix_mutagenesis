@@ -4,7 +4,7 @@ addpath(genpath('~/Develop/matlab'));
 %% Pipeline to generate DS w/ all possible mutations and their annotations
 
 % read fasta file with whole sequence
-PhixGenome = readSequenceFromFasta('~/Develop/Phix_mutagenesis/Data/genomeNC_001422.1.fasta');
+PhixGenome = readSequenceFromFasta('~/Develop/Phix_mutagenesis/ExternalData/genomeNC_001422.1.fasta');
 
 %% make a DS w all possible combinations
 nucleotides_cell = {'A' , 'C' , 'G' , 'T'};
@@ -38,7 +38,7 @@ end
 save('DS_MutationsInfo.mat' , 'DS');        
         
 % add info reagarding a nucleotide being a common SNP or ARS
-anno = dataset('file','~/Develop/Phix_mutagenesis/Data/annotation.tab');
+anno = dataset('file','~/Develop/Phix_mutagenesis/ExternalData/annotation.tab');
 idx = find(~strcmp(anno.Type , 'CDS') & ~strcmp(anno.Type , 'mRNA/exon'));
 anno = anno(idx , :);
 DS.SpecialFeatures = cell(length(DS) , 1);        
@@ -50,7 +50,7 @@ for I = 1:length(DS)
 end
 
 % add info regarding to which annotated genes position belongs
-anno = dataset('file','~/Develop/Phix_mutagenesis/Data/annotation.tab');
+anno = dataset('file','~/Develop/Phix_mutagenesis/ExternalData/annotation.tab');
 idx = find(strcmp(anno.Type , 'CDS') );
 anno = anno(idx , :);
 DS.GeneBounds = cell(length(DS) , 1);
@@ -79,8 +79,8 @@ for I = 1:length(DS)
 end
 save('DS_MutationsInfo.mat' , 'DS');   
 
-%%
-AA_table = dataset('file' , '~/Develop/Phix_mutagenesis/Data/AA_table.tab');
+%
+AA_table = dataset('file' , '~/Develop/Phix_mutagenesis/ExternalData/AA_table.tab');
 N = length(PhixGenome);
 DS.SynonymousBool = cell(length(DS) , 1);
 for I = 1:length(DS)
@@ -120,14 +120,14 @@ for I = 1:length(DS)
 end
 save('DS_MutationsInfo.mat' , 'DS');   
 
-%%
+%
 DS.MutationType = cell(length(DS) , 1);
 for I = 1:length(DS)
     DS.MutationType{I} = getMutationType(DS.PositionNucleotide{I} , DS.PositionNucleotideSubstitute{I});
 end
 save('DS_MutationsInfo.mat' , 'DS');   
 
-%%
+%
 DS.TriNucleotideContext = cell(length(DS) , 1);
 
 DS.TriNucleotideContext{1} = strcat(DS.PositionNucleotide{length(DS)} , DS.PositionNucleotide{2});
@@ -138,8 +138,8 @@ for I = 2:length(DS)-1
 end
 save('DS_MutationsInfo.mat' , 'DS'); 
         
-%% add flag if mutation nonsense
-AA_table = dataset('file' , '~/Develop/Phix_mutagenesis/Data/AA_table.tab');
+% add flag if mutation nonsense
+AA_table = dataset('file' , '~/Develop/Phix_mutagenesis/ExternalData/AA_table.tab');
 N = length(PhixGenome);
 DS.NonsenseBool = cell(length(DS) , 1);
 for I = 1:length(DS)
@@ -170,7 +170,7 @@ for I = 1:length(DS)
 end
 save('DS_MutationsInfo.mat' , 'DS');   
 
-%%
+%
 DS.NonsenseTotalBool = zeros(length(DS) , 1);
 for I = 1:length(DS)
     temp_NonsenseBool = DS.NonsenseBool{I};
@@ -180,7 +180,12 @@ for I = 1:length(DS)
 end
 save('DS_MutationsInfo.mat' , 'DS');   
 
-
+%%
+load('~/Develop/Phix_mutagenesis/Data/DS_MutationsInfo.mat');
+D = DS(: , {'PositionNum', 'PositionNucleotide' , 'PositionNucleotideSubstitute',...
+    'SynonymousTotalBool' , 'MutationType' , 'TriNucleotideContext',...
+    'NonsenseTotalBool'});
+export(D , 'file' , '~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo.tab');
 
 
 
