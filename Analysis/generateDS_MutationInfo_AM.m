@@ -35,7 +35,7 @@ for I = 1:length(nucleotides_cell) - 1
         DS = [DS; D];
     end
 end
-save('DS_MutationsInfo.mat' , 'DS');        
+save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo.mat' , 'DS');      
         
 % add info reagarding a nucleotide being a common SNP or ARS
 anno = dataset('file','~/Develop/Phix_mutagenesis/ExternalData/annotation.tab');
@@ -77,7 +77,7 @@ for I = 1:length(DS)
     DS.GeneAnnotations{I} = temp_GeneAnnotations;
     DS.PositionInGene{I} = temp_PositionInGene;
 end
-save('DS_MutationsInfo.mat' , 'DS');   
+save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo.mat' , 'DS');    
 
 %
 AA_table = dataset('file' , '~/Develop/Phix_mutagenesis/ExternalData/AA_table.tab');
@@ -109,7 +109,7 @@ for I = 1:length(DS)
         DS.SynonymousBool{I} = SynonymousBool;
     end
 end
-save('DS_MutationsInfo.mat' , 'DS');   
+save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo.mat' , 'DS');      
 %%
 DS.SynonymousTotalBool = ones(length(DS) , 1);
 for I = 1:length(DS)
@@ -118,14 +118,14 @@ for I = 1:length(DS)
         DS.SynonymousTotalBool(I) = min(temp_SynonymousBool);
     end
 end
-save('DS_MutationsInfo.mat' , 'DS');   
+save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo.mat' , 'DS');     
 
 %
 DS.MutationType = cell(length(DS) , 1);
 for I = 1:length(DS)
     DS.MutationType{I} = getMutationType(DS.PositionNucleotide{I} , DS.PositionNucleotideSubstitute{I});
 end
-save('DS_MutationsInfo.mat' , 'DS');   
+save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo.mat' , 'DS');    
 
 %
 DS.TriNucleotideContext = cell(length(DS) , 1);
@@ -136,7 +136,7 @@ DS.TriNucleotideContext{length(DS)} = strcat(DS.PositionNucleotide{length(DS)-1}
 for I = 2:length(DS)-1
 	DS.TriNucleotideContext{I} = strcat(DS.PositionNucleotide{I-1} , DS.PositionNucleotide{I+1});
 end
-save('DS_MutationsInfo.mat' , 'DS'); 
+save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo.mat' , 'DS');   
         
 % add flag if mutation nonsense
 AA_table = dataset('file' , '~/Develop/Phix_mutagenesis/ExternalData/AA_table.tab');
@@ -168,7 +168,7 @@ for I = 1:length(DS)
         DS.NonsenseBool{I} = NonsenseBool;
     end
 end
-save('DS_MutationsInfo.mat' , 'DS');   
+save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo.mat' , 'DS');     
 
 %
 DS.NonsenseTotalBool = zeros(length(DS) , 1);
@@ -178,7 +178,7 @@ for I = 1:length(DS)
         DS.NonsenseTotalBool(I) = max(temp_NonsenseBool);
     end
 end
-save('DS_MutationsInfo.mat' , 'DS');   
+save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo.mat' , 'DS');   
 
 %%
 load('~/Develop/Phix_mutagenesis/Data/DS_MutationsInfo.mat');
