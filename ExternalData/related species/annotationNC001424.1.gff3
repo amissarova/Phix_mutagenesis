@@ -1,0 +1,215 @@
+LOCUS       NC_001424               5386 bp ss-DNA     circular PHG 10-JUL-2008
+DEFINITION  Enterobacteria phage S13, complete genome.
+ACCESSION   NC_001424
+VERSION     NC_001424.1
+DBLINK      Project: 14016
+KEYWORDS    RefSeq.
+SOURCE      Enterobacteria phage S13
+  ORGANISM  Enterobacteria phage S13
+            Viruses; ssDNA viruses; Microviridae; Microvirus.
+REFERENCE   1  (bases 1 to 5386)
+  AUTHORS   Lau,P.C. and Spencer,J.H.
+  TITLE     Nucleotide sequence and genome organization of bacteriophage S13
+            DNA
+  JOURNAL   Gene 40 (2-3), 273-284 (1985)
+   PUBMED   3007293
+REFERENCE   2  (sites)
+  AUTHORS   Grosveld,F.G. and Spencer,J.H.
+  TITLE     The nucleotide sequence of two restriction fragments located in the
+            gene AB region of bacteriophage S13
+  JOURNAL   Nucleic Acids Res. 4 (7), 2235-2252 (1977)
+   PUBMED   909772
+REFERENCE   3  (bases 1 to 5386)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-AUG-2000) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from M14428.
+            Draft entry and clean copy of sequence in [1] kindly provided by
+            J.H.Spencer (20-JUL-1987).
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..5386
+                     /organism="Enterobacteria phage S13"
+                     /mol_type="genomic DNA"
+                     /host="Salmonella"
+                     /db_xref="taxon:10844"
+     gene            37..1605
+                     /locus_tag="S13_01"
+                     /db_xref="GeneID:1260989"
+     CDS             37..1605
+                     /locus_tag="S13_01"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="gene A_1 protein"
+                     /protein_id="NP_040741.1"
+                     /db_xref="GeneID:1260989"
+                     /translation="MPPNFGGFFMVRSYYPSECHADYFDFERIEALKPAIEACGISTL
+                     SQSPMLGFHKQMDNRIKLLEEILSFRMQGVEFDNGDMYVYGHKAASDVRDEFVSVTEK
+                     LMDELAQCYNVLPQLDINNTIDHPPEGDEKWFLENEKTVTQFCRKLAAERPLKDIRDE
+                     YNYPKKKGIKDECSRLLEASTMKSRRGFTIQRLMNAMRQAHADGWFIVFDTLTLADDR
+                     LEAFYDNPNALRDYFRDIGRMVLAAERRKANDSHADCYQYFCVPEYGTANGRLHFHAV
+                     HFMRTLPSGSVDPNFGRRVRNRRQLNSLQNTWPYGYSMPIAVRYTQDAFSRSGWLWPV
+                     DAKGEPLKATSYMAVGFYVAKYVNKKSDMDLAAKGLGAKEWNNSLKTKLSLLPKKLFR
+                     IRMSRNFGMKMFTMTNLSMECLIQLTKLGYDATPFNQILKQNAKREMRLRLGKVTVAD
+                     VLAAQPVTTNLLKFMRASIKMIGVSNLQSFIASMTQKLTLSDISDESKNYLDKAGITT
+                     ACLRIKSKWTAGGK"
+     gene            64..1605
+                     /locus_tag="S13_02"
+                     /db_xref="GeneID:1260990"
+     CDS             64..1605
+                     /locus_tag="S13_02"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="gene A protein"
+                     /protein_id="NP_040742.1"
+                     /db_xref="GeneID:1260990"
+                     /translation="MVRSYYPSECHADYFDFERIEALKPAIEACGISTLSQSPMLGFH
+                     KQMDNRIKLLEEILSFRMQGVEFDNGDMYVYGHKAASDVRDEFVSVTEKLMDELAQCY
+                     NVLPQLDINNTIDHPPEGDEKWFLENEKTVTQFCRKLAAERPLKDIRDEYNYPKKKGI
+                     KDECSRLLEASTMKSRRGFTIQRLMNAMRQAHADGWFIVFDTLTLADDRLEAFYDNPN
+                     ALRDYFRDIGRMVLAAERRKANDSHADCYQYFCVPEYGTANGRLHFHAVHFMRTLPSG
+                     SVDPNFGRRVRNRRQLNSLQNTWPYGYSMPIAVRYTQDAFSRSGWLWPVDAKGEPLKA
+                     TSYMAVGFYVAKYVNKKSDMDLAAKGLGAKEWNNSLKTKLSLLPKKLFRIRMSRNFGM
+                     KMFTMTNLSMECLIQLTKLGYDATPFNQILKQNAKREMRLRLGKVTVADVLAAQPVTT
+                     NLLKFMRASIKMIGVSNLQSFIASMTQKLTLSDISDESKNYLDKAGITTACLRIKSKW
+                     TAGGK"
+     gene            580..1605
+                     /locus_tag="S13_03"
+                     /db_xref="GeneID:1260991"
+     CDS             580..1605
+                     /locus_tag="S13_03"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="gene A_2 protein"
+                     /protein_id="NP_040743.1"
+                     /db_xref="GeneID:1260991"
+                     /translation="MKSRRGFTIQRLMNAMRQAHADGWFIVFDTLTLADDRLEAFYDN
+                     PNALRDYFRDIGRMVLAAERRKANDSHADCYQYFCVPEYGTANGRLHFHAVHFMRTLP
+                     SGSVDPNFGRRVRNRRQLNSLQNTWPYGYSMPIAVRYTQDAFSRSGWLWPVDAKGEPL
+                     KATSYMAVGFYVAKYVNKKSDMDLAAKGLGAKEWNNSLKTKLSLLPKKLFRIRMSRNF
+                     GMKMFTMTNLSMECLIQLTKLGYDATPFNQILKQNAKREMRLRLGKVTVADVLAAQPV
+                     TTNLLKFMRASIKMIGVSNLQSFIASMTQKLTLSDISDESKNYLDKAGITTACLRIKS
+                     KWTAGGK"
+     gene            1158..1520
+                     /locus_tag="S13_04"
+                     /db_xref="GeneID:1260992"
+     CDS             1158..1520
+                     /locus_tag="S13_04"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="gene B protein"
+                     /protein_id="NP_040744.1"
+                     /db_xref="GeneID:1260992"
+                     /translation="MEQLTKNQAVATSQEAFQNQNEPQLRDENVHNDKSVHGVLNPTY
+                     QAGLRRDAVQPDIEAERKKRDEIEAGKSYCSRRFGGATCDDKSAQIYARFDKNDWRIQ
+                     PAEFYRFHDAEVNTFGYF"
+     gene            1520..1690
+                     /locus_tag="S13_05"
+                     /db_xref="GeneID:1260993"
+     CDS             1520..1690
+                     /locus_tag="S13_05"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="gene K protein"
+                     /protein_id="NP_040745.1"
+                     /db_xref="GeneID:1260993"
+                     /translation="MSRKIILIKQELLLLVYELNRSGLLAENEKIRPILAQLEKLLLC
+                     DLSPSTNDSVKN"
+     gene            1602..1862
+                     /locus_tag="S13_06"
+                     /db_xref="GeneID:1260994"
+     CDS             1602..1862
+                     /locus_tag="S13_06"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="gene C protein"
+                     /protein_id="NP_040746.1"
+                     /db_xref="GeneID:1260994"
+                     /translation="MRKFDLSLRSSRSSYFATFRHQLTILSKTDALDEEKWLNMLGTF
+                     VKDWFRYESHFVHGRDSLVDILKERGLLSESDAVQPLIGKKS"
+     gene            1859..2317
+                     /locus_tag="S13_07"
+                     /db_xref="GeneID:1260995"
+     CDS             1859..2317
+                     /locus_tag="S13_07"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="gene D protein"
+                     /protein_id="NP_040747.1"
+                     /db_xref="GeneID:1260995"
+                     /translation="MSQVTEQSVRFQTALASIKLIQASAVLDLTEDDFDFLTSNKVWI
+                     ATDRSRARRCVEACVYGTLDFVGYPRFPAPVEFIAAVIAYYVHPVNIQTACLIMEGAE
+                     FTENIINGVERPVKAAELFAFTLRVRAGNTDVLTDAEENVRQKLRAEGVM"
+     gene            2037..2312
+                     /locus_tag="S13_08"
+                     /db_xref="GeneID:1260996"
+     CDS             2037..2312
+                     /locus_tag="S13_08"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="gene E protein"
+                     /protein_id="NP_040748.1"
+                     /db_xref="GeneID:1260996"
+                     /translation="MVRWTLWDTLAFLLLLSLLLPSLLIMFIPSTFKRPVSSWKALNL
+                     RKTLLMASSVRLKPLNCSRLPCVYAQETLTFLLTQKKTCVKNYVQKE"
+     gene            2317..2433
+                     /locus_tag="S13_09"
+                     /db_xref="GeneID:1260997"
+     CDS             2317..2433
+                     /locus_tag="S13_09"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="gene J protein"
+                     /protein_id="NP_040749.1"
+                     /db_xref="GeneID:1260997"
+                     /translation="MSKGKKRSGARPGRPQPLRGTKGKRKGARLWYVGGQQF"
+     gene            2470..3753
+                     /locus_tag="S13_10"
+                     /db_xref="GeneID:1260998"
+     CDS             2470..3753
+                     /locus_tag="S13_10"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="capsid protein"
+                     /protein_id="NP_040750.1"
+                     /db_xref="GeneID:1260998"
+                     /translation="MSNVQTGAERMPHDLSHLGFLAGQIGRLITISTTPVIAGDSFEM
+                     DAVGALRLSPLRRGLAIDSTVDIFTFYVPHRHVYGERWIKFMKDGVNATPLPTVNTTS
+                     YIDHAAFLGTINPDTNKIPKHLFQGYLNIYNNYFKAPWMPDRTEANPNELNEDDARYG
+                     FRCCHLKNIWTAPLPPETELSRRMTTSTTSIDIMGLQAAYANLHTDQERDYFMQRYRD
+                     VISSFGGKTSYDADNRPLLVMRSNFWASGYDVDGTDQTSLGQFSGRVQQTYKHSVPRF
+                     FVPEHGTMFTLALVRFPPTATKEIQYLNAKGALTYTDIAGDPALYGNLPPREISMKDV
+                     FRSGDSSKKFKIAEGQWYRYAPSYVSPVYHLLEGFPFIQEPPSGDLQERVLIRHHDYD
+                     HCFQSVQLLQWNSQVKFNVTVYRNLPTTRDSIMTS"
+     gene            3864..4391
+                     /locus_tag="S13_11"
+                     /db_xref="GeneID:1260999"
+     CDS             3864..4391
+                     /locus_tag="S13_11"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="gene G protein"
+                     /protein_id="NP_040751.1"
+                     /db_xref="GeneID:1260999"
+                     /translation="MFQTFISRHNSNFFSDKLVASSVTPASLAPVLQTPKATSSTLYF
+                     DSLTVNAGNGGFLHCIQMDTSVNAANQVVSVGADIAFDADPKFFACLVRFESSSVPTT
+                     LPTAYDVYPLNGRHDGGYYTVKDCVTIDVLPRTPGNNVYVGFMVWSNFTATKCRGLVS
+                     LNQVIKVIICLQPLK"
+     gene            4400..5386
+                     /locus_tag="S13_12"
+                     /db_xref="GeneID:1261000"
+     CDS             4400..5386
+                     /locus_tag="S13_12"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="spike protein"
+                     /protein_id="NP_040752.1"
+                     /db_xref="GeneID:1261000"
+                     /translation="MFGAIAGGIASALAGGVMSKLFGGGQKAASGGIQGDVLATDNNT
+                     VGMGDAGIKSAIQGSNVPNSDEAAPSFLSGAMAKAGKGLLEGTLQAGTSAVSDKLLDL
+                     VGLGGKSAADKGKDTRDYLAAAFPELNAWERAGAGASSSAIVDAGFENQKELTKMQLD
+                     NQKEIAEMQNETQKEIAGIQSATSRQNTKDQVYAQNEMLAYQQKESTARVASIMENTN
+                     LSKQQQVSEIMRQMLTQAQTAGQYFTNDQIKEMTRKVSAEVDLVHQQTQNQRYGSSHI
+                     GATAKDISNVVTDAASGVVDIFHGIDKAVADTWNNFWKDGKADGIGSNLSRK"

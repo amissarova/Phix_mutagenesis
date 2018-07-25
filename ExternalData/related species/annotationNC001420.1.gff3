@@ -1,0 +1,252 @@
+LOCUS       NC_001420               5577 bp ss-DNA     circular PHG 23-MAY-2006
+DEFINITION  Enterobacteria phage G4, complete genome.
+ACCESSION   NC_001420
+VERSION     NC_001420.1
+DBLINK      Project: 14318
+KEYWORDS    RefSeq.
+SOURCE      Enterobacteria phage G4
+  ORGANISM  Enterobacteria phage G4
+            Viruses; ssDNA viruses; Microviridae; Microvirus.
+REFERENCE   1  (sites)
+  AUTHORS   Swart,J.R. and Griep,M.A.
+  TITLE     Primase from Escherichia coli primes single-stranded templates in
+            the absence of single-stranded DNA-binding protein or other
+            auxiliary proteins. Template sequence requirements based on the
+            bacteriophage G4 complementary strand origin and Okazaki fragment
+            initiation sites
+  JOURNAL   J. Biol. Chem. 268 (17), 12970-12976 (1993)
+   PUBMED   8509429
+REFERENCE   2  (bases 1013 to 1072)
+  AUTHORS   Hillebrand,G.G. and Beattie,K.L.
+  TITLE     Influence of template primary and secondary structure on the rate
+            and fidelity of DNA synthesis
+  JOURNAL   J. Biol. Chem. 260 (5), 3116-3125 (1985)
+   PUBMED   3972819
+REFERENCE   3  (bases 3819 to 4094)
+  AUTHORS   Sims,J., Koths,K. and Dressler,D.
+  TITLE     Single-stranded phage replication: positive- and negative-strand
+            DNA synthesis
+  JOURNAL   Cold Spring Harb. Symp. Quant. Biol. 43 (Pt 1), 349-365 (1979)
+   PUBMED   157839
+REFERENCE   4  (bases 1 to 5577)
+  AUTHORS   Godson,G.N., Barrell,B.G., Staden,R. and Fiddes,J.C.
+  TITLE     Nucleotide sequence of bacteriophage G4 DNA
+  JOURNAL   Nature 276 (5685), 236-247 (1978)
+   PUBMED   714153
+REFERENCE   5  (bases 2402 to 2691)
+  AUTHORS   Fiddes,J.C. and Godson,G.N.
+  TITLE     Nucleotide sequence of the J gene and surrounding untranslated
+            regions of phage G4 DNA: comparison with phage phiX174
+  JOURNAL   Cell 15 (3), 1045-1053 (1978)
+   PUBMED   728985
+REFERENCE   6  (bases 1623 to 1808)
+  AUTHORS   Shaw,D.C., Walker,J.E., Northrop,F.D., Barrell,B.G., Godson,G.N.
+            and Fiddes,J.C.
+  TITLE     Gene K, a new overlapping gene in bacteriophage G4
+  JOURNAL   Nature 272 (5653), 510-515 (1978)
+   PUBMED   692656
+REFERENCE   7  (bases 1 to 5577)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-AUG-2000) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from J02454.
+            [WARNING] On Apr 7, 2008 this sequence was replaced by NC_001420.2.
+            Double-checked with sumex tape. Single-stranded circular DNA which
+            codes for eleven proteins. Replic. form is duplex. Icosahedron,
+            related to phiX174 & s13. corresponds to embl (release 3.0) entry
+            <mig4xx>, dated 05-APR-1983.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..5577
+                     /organism="Enterobacteria phage G4"
+                     /mol_type="genomic DNA"
+                     /host="Escherichia coli"
+                     /db_xref="taxon:10843"
+     gene            join(1100..5577,1..54)
+                     /locus_tag="G4p01"
+                     /db_xref="GeneID:1260915"
+     mRNA            join(1100..5577,1..54)
+                     /locus_tag="G4p01"
+                     /note="mRNA (alt.)"
+                     /db_xref="GeneID:1260915"
+     gene            41..54
+                     /locus_tag="G4p02"
+                     /db_xref="GeneID:1260920"
+     mRNA            41..54
+                     /locus_tag="G4p02"
+                     /note="mRNA (alt.)"
+                     /db_xref="GeneID:1260920"
+     gene            59..1723
+                     /locus_tag="G4p03"
+                     /db_xref="GeneID:1260914"
+     CDS             59..1723
+                     /locus_tag="G4p03"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="RF replication, viral strand synthesis protein"
+                     /protein_id="NP_040670.1"
+                     /db_xref="GeneID:1260914"
+                     /translation="MFKVHSDYFSKPNIDAIKPLVETAGMSVLTQSPNLRIWKQCNTR
+                     IKLLEEILAHYTNGIRRDDNGDFWMNPNSQLATTIAYRAHHKGHNPKFKQYPETFTLD
+                     DIITGKPIPQTAPDELQLSDEIVEDYRLTVLSIIEELQECYDVLGQLDINNTIDHKPL
+                     GNDHWNLLYEKPVYKHWYQLVSNRPLKDIRADYNYAKAKGVKDECSKILEESTMKSRR
+                     GFTVQRLMNAMRTAHSKGWYVVFDTLTLADDRLKDFYDNPNALRDYFRDIGRMVLTAE
+                     GRSVHDSSSDCYQYFCVPEYGTQHGRLHFHAVHLMRTLPLGSLDPNFGKLVRINRQIN
+                     SLQNTWPYGYSMPIAVRYSQDAFSRAGWLWPVDSKGEPLKATSYMAVGFYVAKYVNKK
+                     SDIDMAVKGLGNKEWNNSLKTKINLIPKKVFRIRMSRNFGMKLLSMAHLSAETLMELT
+                     QVGYDVTPFNNILKQNAKKELKSRLAKKSVADVLEAQPVTTNLLKFMRNLTRTIGASN
+                     LQSFIASMTTKLTSTDISDETKNYVASAGIAVANLRIKSKWTAGGK"
+     rep_origin      507
+                     /locus_tag="G4p03"
+                     /note="origin of viral strand synthesis"
+     gene            698..1723
+                     /locus_tag="G4p04"
+                     /db_xref="GeneID:1260919"
+     CDS             698..1723
+                     /locus_tag="G4p04"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="shut off host DNA synthesis protein"
+                     /protein_id="NP_040671.1"
+                     /db_xref="GeneID:1260919"
+                     /translation="MKSRRGFTVQRLMNAMRTAHSKGWYVVFDTLTLADDRLKDFYDN
+                     PNALRDYFRDIGRMVLTAEGRSVHDSSSDCYQYFCVPEYGTQHGRLHFHAVHLMRTLP
+                     LGSLDPNFGKLVRINRQINSLQNTWPYGYSMPIAVRYSQDAFSRAGWLWPVDSKGEPL
+                     KATSYMAVGFYVAKYVNKKSDIDMAVKGLGNKEWNNSLKTKINLIPKKVFRIRMSRNF
+                     GMKLLSMAHLSAETLMELTQVGYDVTPFNNILKQNAKKELKSRLAKKSVADVLEAQPV
+                     TTNLLKFMRNLTRTIGASNLQSFIASMTTKLTSTDISDETKNYVASAGIAVANLRIKS
+                     KWTAGGK"
+     gene            1276..1638
+                     /locus_tag="G4p05"
+                     /db_xref="GeneID:1260918"
+     CDS             1276..1638
+                     /locus_tag="G4p05"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="capsid morphogenesis protein"
+                     /protein_id="NP_040672.1"
+                     /db_xref="GeneID:1260918"
+                     /translation="MEQFTQNQNQPHTQESVQNTNVSQFRNETVINGSPVSGNPDGTD
+                     PSGLRRDPVQQHLEAERQERAQIEAGKEICRRRFGGATCDDESAKIHAQFDPNNRSVQ
+                     PTEFYRFNDHEINKYGYF"
+     gene            1627..1637
+                     /locus_tag="G4p06"
+                     /db_xref="GeneID:1260922"
+     mRNA            1627..1637
+                     /locus_tag="G4p06"
+                     /note="mRNA start"
+                     /db_xref="GeneID:1260922"
+     gene            1638..1808
+                     /locus_tag="G4p07"
+                     /db_xref="GeneID:1260916"
+     CDS             1638..1808
+                     /locus_tag="G4p07"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="gene K protein"
+                     /protein_id="NP_040673.1"
+                     /db_xref="GeneID:1260916"
+                     /translation="MKPKTTLLLQELLLLTYELNRSGLLVENEEIQSQLKKLEVVLLC
+                     NLSPSSQRAGKN"
+     gene            1720..1974
+                     /locus_tag="G4p08"
+                     /db_xref="GeneID:1260917"
+     CDS             1720..1974
+                     /locus_tag="G4p08"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="DNA maturation protein"
+                     /protein_id="NP_040674.1"
+                     /db_xref="GeneID:1260917"
+                     /translation="MRKFNLNLKNSRSSYFATFRHHLNVLAKTDALDEEKYLNMLGAL
+                     LKDWFRYEEHFVHGKQSMLDILKERGLLSTSSTDTNHKGN"
+     gene            1976..2434
+                     /locus_tag="G4p09"
+                     /db_xref="GeneID:1260921"
+     CDS             1976..2434
+                     /locus_tag="G4p09"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="capsid morphogenesis protein"
+                     /protein_id="NP_040675.1"
+                     /db_xref="GeneID:1260921"
+                     /translation="MSKSNESAVAFQTAIASIKLIQASSVLDLTEDDFDFLTRDRVWI
+                     ATDRSRARRAIEACVYGTLDFVGYPRFPAPVEFISAVIAYYVHPVNIQTACLIMEGAE
+                     FTENIVNGVERPVKASELFAFTLLVRAGNKDLIGHAETNIREQLRAQGVM"
+     gene            2154..2444
+                     /locus_tag="G4p10"
+                     /db_xref="GeneID:1260912"
+     CDS             2154..2444
+                     /locus_tag="G4p10"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="cell lysis protein"
+                     /protein_id="NP_040676.1"
+                     /db_xref="GeneID:1260912"
+                     /translation="MEHWTLSGILAFLLLLSLFLPSLLITFIPLTSKPPVSSWKVLSL
+                     PKTSSMVLNAPLKPLNCSPSLFLFAPETKILSVTLKQTSVNSYALKVSCKDL"
+     gene            2477..2554
+                     /locus_tag="G4p11"
+                     /db_xref="GeneID:1260913"
+     CDS             2477..2554
+                     /locus_tag="G4p11"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="core protein, DNA condensation"
+                     /protein_id="NP_040677.1"
+                     /db_xref="GeneID:1260913"
+                     /translation="MKKSIRRSGGKSKGARLWYVGGTQY"
+     CDS             2600..3883
+                     /locus_tag="G4p01"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="major coat protein"
+                     /protein_id="NP_040678.1"
+                     /db_xref="GeneID:1260915"
+                     /translation="MSNVQTSADRVPHDLSHLVFEAGKIGRLKTISWTPGGAGDSFEC
+                     DMVGAIRLSPLRRGLAVDSRVDIFPFYIPHRHIYGQQWINFMKDGVNASPLPPVTCSS
+                     GWDSAAYLGTIPSSTLKVPKFLHQGYLNIYNNYFKPPWSDDLTYANPSNMPSEDYKWG
+                     VRVANLKSIWTAPLPPDTRTSENMTTGTSTIDIMGLQAAYAKLHTEQERDYFMTRYRD
+                     IMKEFGGHTSYDGDNRPLLLMRSEFWASGYDVDGTDQSSLGQFSGRVQQTFNHKVPRF
+                     YVPEHRVIMTLAVTRFPPTHEMEMHYLVGKENLTYTDIACDPALMANLPPREVSLKEF
+                     FHSSPDSAKFKIAEGQWYRTQPDRVAFPYNALDGFPFYSALPSTELKDRVLVNTNNYD
+                     EIFQSMQLAHWNMQTKFNINVYRHMPTTRDSIMTS"
+     regulatory      3970..3997
+                     /regulatory_class="other"
+                     /locus_tag="G4p01"
+                     /note="RNA primer attachment site"
+     rep_origin      complement(3997)
+                     /note="origin of complementary strand synthesis"
+     gene            4020..4553
+                     /locus_tag="G4p12"
+                     /db_xref="GeneID:1260923"
+     CDS             4020..4553
+                     /locus_tag="G4p12"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="major spike protein"
+                     /protein_id="NP_040679.1"
+                     /db_xref="GeneID:1260923"
+                     /translation="MFQKFISKHNAPINSTQLAATKTPAVAAPVLSVPNLSRSTILIN
+                     ATTTAVTTHSGLCHVVRIDETNPTNHHALSIAGSLSNVPADMIAFAIRFEVADGVVPT
+                     AVPALYDVYPIETFNNGKAISFKDAVTIDSHPRTVGNDVYAGIMLWSNAWTASTISGV
+                     LSVNQVNREATVLQPLK"
+     gene            4564..5577
+                     /locus_tag="G4p13"
+                     /db_xref="GeneID:1260924"
+     CDS             4564..5577
+                     /locus_tag="G4p13"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="minor spike protein, adsorption"
+                     /protein_id="NP_040680.1"
+                     /db_xref="GeneID:1260924"
+                     /translation="MFGSIAGGIASALAGGLMGKLFGGGQSADSTGIQGNVLASDNNV
+                     VGANDAGIKSAIQGSTVPNSQEAAPSAISGILADSGKHALSSLTNAGANKLMEAVGLS
+                     KSASDKGKDTKDYLAAAFPELNPWERAGAGASSPGMQDAGFQNQKELTKMQLDNQKEI
+                     AKMQNETQKEIAGLQSITSRENTKDTVYAQNEMLAYNQKESMSRVGAILENTSLTKQQ
+                     QTSEIMRQMLTQAQTAGQYFTNDQIKELTRKVGADIDAVRANTARTHVETDRSKQEVQ
+                     NSRYASSQVGKTAKDVSNAITDTAGSIVDYFRGADQKVADVYNNYFKDGKSKGIESNH
+                     RSK"

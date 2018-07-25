@@ -1,0 +1,234 @@
+LOCUS       NC_001730               5386 bp    DNA     linear   PHG 06-JAN-2016
+DEFINITION  Bacteriophage phiK complete genome.
+ACCESSION   NC_001730 REGION: 1..5386
+VERSION     NC_001730.1
+DBLINK      BioProject: PRJNA307872
+KEYWORDS    RefSeq; complete genome.
+SOURCE      Enterobacteria phage phiK
+  ORGANISM  Enterobacteria phage phiK
+            Viruses; ssDNA viruses; Microviridae; unclassified Microviridae;
+            Microvirus.
+REFERENCE   1  (bases 1 to 5386)
+  AUTHORS   Kodaira,K., Oki,M., Kakikawa,M., Kimoto,H. and Taketo,A.
+  TITLE     The virion proteins encoded by bacteriophage phi K and its
+            host-range mutant phi KhT: host-range determination and DNA binding
+            properties
+  JOURNAL   J. Biochem. 119 (6), 1062-1069 (1996)
+   PUBMED   8827438
+REFERENCE   2  (bases 1 to 5386)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-JAN-2016) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 5386)
+  AUTHORS   Kodaira,K.I.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-NOV-1994) K.I. Kodaira, Dept of Cell Technology,
+            Chemical and Biochemical Engineering, Faculty of Engineering,
+            Toyama Univ, 3190 Gofuku, Toyama, Toyama 930, JAPAN
+REFERENCE   4  (bases 1 to 5386)
+  AUTHORS   Kodaira,K.I.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (20-SEP-1991) K.I. Kodaira, Dept of Cell Technology,
+            Chemical and Biochemical Engineering, Faculty of Engineering,
+            Toyama Univ, 3190 Gofuku, Toyama, Toyama 930, JAPAN
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to X60323.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..5386
+                     /organism="Enterobacteria phage phiK"
+                     /mol_type="genomic DNA"
+                     /isolate="wild type"
+                     /db_xref="taxon:10848"
+                     /clone_lib="al3wt"
+     gene            758..2242
+                     /gene="A"
+                     /locus_tag="phiKp01"
+                     /db_xref="GeneID:1261192"
+     CDS             758..2242
+                     /gene="A"
+                     /locus_tag="phiKp01"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="NP_043942.1"
+                     /db_xref="GOA:P25244"
+                     /db_xref="InterPro:IPR008683"
+                     /db_xref="InterPro:IPR008684"
+                     /db_xref="UniProtKB/Swiss-Prot:P25244"
+                     /db_xref="GeneID:1261192"
+                     /translation="MATEIFSDVVKSVWSHATAKHAHLRMAVQVDNRSRLLSDLVYQL
+                     EKRLSEETHLDDETYALYESQTGLLEDHMALVRKCAAQLDNSNTIDHRTPLDPECVFL
+                     FEMICPGVRYGKTLNSLWSKYAAQWPEKLIRQELDMVKPLSFKDEVAKYMEKMQEKTR
+                     KNRMTQKVINEMRIAHQKGWFFVFDTLTLADDRLQAFNENPNALRDYFRTVGRAVLRA
+                     EGRSVKDSYNDCYRYLCVPEFGGQHGRLHWHVVHMVRTLPLGSHDPNFGRPVRNYRQI
+                     NSFRGMWPYGFTQPIAVRYQHDAYSRKGWLWPVDKSGKAMQSKPYQAVAWYVTKYVAK
+                     QSDQRQKAITERQKKCKNPLMAICLKKEFRVRSSRKLGMELPSMAHLSNKVLLELSRI
+                     SFDSSPLYQIVKENAKKQLTLNIGALPLHVILDVRPEVRSMLKAIRRLMKKTPEFNWQ
+                     SSIASMTVTLKNGDISDEARQYIIDAGITPTDLRAKATQTFGGK"
+     gene            1804..2157
+                     /gene="B"
+                     /locus_tag="phiKp02"
+                     /db_xref="GeneID:1261193"
+     CDS             1804..2157
+                     /gene="B"
+                     /locus_tag="phiKp02"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="NP_043943.1"
+                     /db_xref="GOA:Q38036"
+                     /db_xref="InterPro:IPR003513"
+                     /db_xref="UniProtKB/Swiss-Prot:Q38036"
+                     /db_xref="GeneID:1261193"
+                     /translation="MQESINGNLSEERISGAQQPEAWNGAPVNGSPEQQSASGAESNQ
+                     LRFQSSLSDSERERQKATDLEHRRAAFARHFGCAPGSEKHVESYSSFDEKDTRVQLAE
+                     FYRFNDGHLKKWGYF"
+     gene            2157..2318
+                     /gene="K"
+                     /locus_tag="phiKp03"
+                     /db_xref="GeneID:1261195"
+     CDS             2157..2318
+                     /gene="K"
+                     /locus_tag="phiKp03"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="NP_043944.1"
+                     /db_xref="UniProtKB/Swiss-Prot:Q38038"
+                     /db_xref="GeneID:1261195"
+                     /translation="MKHVNTLLMQELRLLICELKRLKLSAVSDPDFSQEKIHAELDSL
+                     LCKLSRHFD"
+     gene            2269..2475
+                     /gene="C"
+                     /locus_tag="phiKp04"
+                     /db_xref="GeneID:1261194"
+     CDS             2269..2475
+                     /gene="C"
+                     /locus_tag="phiKp04"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="NP_043945.1"
+                     /db_xref="InterPro:IPR016407"
+                     /db_xref="UniProtKB/Swiss-Prot:Q38037"
+                     /db_xref="GeneID:1261194"
+                     /translation="MLSSTRYYASYRATLTKQLMFLTKADFTNDDEKWLNAFGNLLRQ
+                     WFQIEDWKGNHKKLLDDLKRRDYL"
+     gene            2502..2954
+                     /gene="D"
+                     /locus_tag="phiKp05"
+                     /db_xref="GeneID:1261196"
+     CDS             2502..2954
+                     /gene="D"
+                     /locus_tag="phiKp05"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="NP_043946.1"
+                     /db_xref="GOA:Q38039"
+                     /db_xref="InterPro:IPR004196"
+                     /db_xref="UniProtKB/Swiss-Prot:Q38039"
+                     /db_xref="GeneID:1261196"
+                     /translation="MNIVSDVNYATSVAALRMLQASSVLDITEEDFDFLTGDKIWIAT
+                     DRNRARRCVEACVYGTLDFVGYPRFPAPVEFIAAVIAYYVHPVNIQTACLVMEGAEFS
+                     ENIINGVERPVNAAELFAYTLRIKAGFKETVIDAEENARQKLRANGLK"
+     gene            2674..2901
+                     /gene="E"
+                     /locus_tag="phiKp06"
+                     /db_xref="GeneID:1261197"
+     CDS             2674..2901
+                     /gene="E"
+                     /locus_tag="phiKp06"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="NP_043947.1"
+                     /db_xref="GOA:Q38040"
+                     /db_xref="InterPro:IPR007605"
+                     /db_xref="UniProtKB/Swiss-Prot:Q38040"
+                     /db_xref="GeneID:1261197"
+                     /translation="MERWTLSAILAFLLLLSLLLPSLLIMFIPSTFRQHASLWKARSL
+                     AKTLLMASSARLTPLSSSRTPCVLRQDSKKL"
+     gene            2956..3030
+                     /gene="J"
+                     /locus_tag="phiKp07"
+                     /db_xref="GeneID:1261198"
+     CDS             2956..3030
+                     /gene="J"
+                     /locus_tag="phiKp07"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="NP_043948.1"
+                     /db_xref="GOA:P69549"
+                     /db_xref="InterPro:IPR006815"
+                     /db_xref="UniProtKB/Swiss-Prot:P69549"
+                     /db_xref="GeneID:1261198"
+                     /translation="MKKARRSPSRRKGARLWYVGGSQF"
+     gene            3063..4358
+                     /gene="F"
+                     /locus_tag="phiKp08"
+                     /db_xref="GeneID:1261199"
+     CDS             3063..4358
+                     /gene="F"
+                     /locus_tag="phiKp08"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="NP_043949.1"
+                     /db_xref="GOA:Q38041"
+                     /db_xref="InterPro:IPR003514"
+                     /db_xref="InterPro:IPR016184"
+                     /db_xref="UniProtKB/Swiss-Prot:Q38041"
+                     /db_xref="GeneID:1261199"
+                     /translation="MSNVQTSAEREIVDLSHLAFDCGMIGRLKTVSWTPVIAGDSFEL
+                     DAVGALRLSPLRRGLAIDSKVDFFTFYIPHRHVYGDQWIQFMRDGVDASPLPSVTTTK
+                     YPDDAGYVGTIVPKSNRIPKFLHQSYLNIYNNYFRAPWMPERTEANPSNLDRDDSRYG
+                     FRCCHLKTIWSAPLPPETKLAEQMGIESNSIDIMGLQAAYAQLHTEQERTYFMQRYRD
+                     VISSFGGSTSYDADNRPLLVMHTDFWASGYDVDGTDQSSLGQFSGRVQQTFKHSVPRF
+                     FVPEHGVMMTLMLVRFPPISPLEHHYLVGRNNLTYTDLAGDPALIGNLPPREISYQDL
+                     FRDGRPGIKIKVAESIWYRTHPDYVNYKYQLLEGFPFLDDAPGTTSGDDLQKAILIDH
+                     NDYNACFQSQQLLQWNNQARYNVNVYRHIPTVRDSIMTS"
+     gene            4392..4955
+                     /gene="G"
+                     /locus_tag="phiKp09"
+                     /db_xref="GeneID:1261200"
+     CDS             4392..4955
+                     /gene="G"
+                     /locus_tag="phiKp09"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="NP_043950.1"
+                     /db_xref="GOA:Q38042"
+                     /db_xref="InterPro:IPR003515"
+                     /db_xref="InterPro:IPR016184"
+                     /db_xref="UniProtKB/Swiss-Prot:Q38042"
+                     /db_xref="GeneID:1261200"
+                     /translation="MYQIFVTKHDTAIQTSRFSVTGSITPVAPTGNIPVINTGNITAE
+                     HAVVSLYANLTAGTSSDGSFIVAMKVDTSPADPNCVISAGVNLSFAGTSYPIVGIVRF
+                     ESASDQPTSIAGSQIEHYPIEMSVGSGGVCSARDCVTVDIHPRAFGNNVFVGVICSSA
+                     KWTSGRVLGTIATTQVIREYQVLQPLK"
+     gene            5091..>5386
+                     /gene="H"
+                     /locus_tag="phiKp10"
+                     /db_xref="GeneID:1261201"
+     CDS             5091..>5386
+                     /gene="H"
+                     /locus_tag="phiKp10"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="NP_043951.1"
+                     /db_xref="GOA:P03649"
+                     /db_xref="InterPro:IPR006777"
+                     /db_xref="UniProtKB/Swiss-Prot:P03649"
+                     /db_xref="GeneID:1261201"
+                     /translation="MLGSIIGGIGSSLLGGIASGGISSLLNKMFSKMPEHAASSAGLT
+                     NGQGTIGMDTDAGIQSAIQGSNVPPAGQLPASNTSGVMADAGNMIRNAGRALLDGTIQ
+                     AGSDKVKEALIDKLVGGNDAKDRGKATRDYLAAAFPELNPWERAGAGASTAGLESSAQ
+                     NQQKEMLKMQLDNQKDIAKMQMNNNLQIAGIQSATSRQNTKDSVYAQNEMLQYNQRES
+                     QARVASILANTDLTTKQATHEIMRMALTRAQETGQHLTNSQIMALEKKVYAEIGKIHQ
+                     DTQNSRYGSSQVTAAAKDVTNMITDASSGLADWASQQWDSFFKDGKSDGIPLNTRK"

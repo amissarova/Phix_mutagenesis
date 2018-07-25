@@ -1,0 +1,276 @@
+LOCUS       NC_001330               5386 bp ss-DNA     linear   PHG 17-APR-2009
+DEFINITION  Enterobacteria phage alpha3, complete genome.
+ACCESSION   NC_001330 REGION: 1..5386
+VERSION     NC_001330.1
+DBLINK      BioProject: PRJNA14570
+KEYWORDS    RefSeq; gene a; gene B; gene C; gene D; gene E; gene F; gene G;
+            gene H; gene J; gene K.
+SOURCE      Enterobacteria phage alpha3
+  ORGANISM  Enterobacteria phage alpha3
+            Viruses; ssDNA viruses; Microviridae; Bullavirinae;
+            Alpha3microvirus.
+REFERENCE   1  (bases 1 to 5386)
+  AUTHORS   Kodaira,K., Nakano,K., Okada,S. and Taketo,A.
+  TITLE     Nucleotide sequence of the genome of the bacteriophage alpha 3:
+            interrelationship of the genome structure and the gene products
+            with those of the phages, phi X174, G4 and phi K
+  JOURNAL   Biochim. Biophys. Acta 1130 (3), 277-288 (1992)
+   PUBMED   1532908
+REFERENCE   2  (bases 1 to 5386)
+  AUTHORS   Kodaira,K.I., Tadokoro,H., Suzuki,K., Oki,M., Manto,S. and
+            Taketo,A.
+  TITLE     Complete nucleotide sequence of the Bacteriophage phiK:
+            Interrelationship of the genome structure, the gene products and
+            the host range with those of the phages alpha3, G4 and phiX174
+  JOURNAL   Unpublished
+REFERENCE   3  (bases 1 to 5386)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-AUG-2000) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   4  (bases 1 to 5386)
+  AUTHORS   Kodaira,K.I.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (20-SEP-1991) K.I. Kodaira, Dept of Cell Technology,
+            Chemical and Biochemical Engineering, Faculty of Engineering,
+            Toyama Univ, 3190 Gofuku, Toyama, Toyama 930, JAPAN
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from X60322.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..5386
+                     /organism="Enterobacteria phage alpha3"
+                     /mol_type="genomic DNA"
+                     /isolate="wildtype"
+                     /host="Escherichia coli"
+                     /db_xref="taxon:10849"
+                     /clone_lib="al3wt"
+     misc_feature    1..>5386
+                     /note="whole genome of bacteriophage alpha3"
+     gene            759..2243
+                     /gene="A"
+                     /locus_tag="alpha3p01"
+                     /db_xref="GeneID:1260690"
+     CDS             759..2243
+                     /gene="A"
+                     /locus_tag="alpha3p01"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="replication initiation protein"
+                     /protein_id="NP_039590.1"
+                     /db_xref="GOA:P25243"
+                     /db_xref="InterPro:IPR008683"
+                     /db_xref="InterPro:IPR008684"
+                     /db_xref="UniProtKB/Swiss-Prot:P25243"
+                     /db_xref="GeneID:1260690"
+                     /translation="MATEIFSDVVKSVWSHATAKHAHLRMAVQVDNRSRLLSDLVYQL
+                     EKRLSEETHLDDETLAIYESQTALLEDHMALVRKCAAQLDNSNTIDHRTPLDAECVFL
+                     FEMICPGVRYGKTLNSLWTKYVVQWPEKLIRQELDMVKPLSFKDEVAKYMEKMQEKTR
+                     KNRMTQKVINEMRIAHQKGWFFVFDTLTLADDRLQAFNENPNALRDYFRTVGRAVLRA
+                     EGRSVKDSYNDCYRYLCVPEFGGQHGRLHWHVVHMVRTLPLGSHDPNFGRKVRNYRQI
+                     NSFRGMWPYGFTQPIAVRYQHDAYSRKGWLWPVDKTGKAMQSKPYQAVAWYVTKYVAK
+                     QSDQRQKAITERQKKCKNPLMAICLKKEFRVRSSRKLGMELPSMAHLSNKVLLELSRI
+                     SFDSSPLYQIVKENAKKQLTLNIGALPLHVILDVRPEVRSMLKTIRRLMKKTPEFNWQ
+                     SSIASMTVTLKNGDISDEARQYIIDAGITPTDLRAKATQTFGGK"
+     gene            1805..2158
+                     /gene="B"
+                     /locus_tag="alpha3p02"
+                     /db_xref="GeneID:1260691"
+     CDS             1805..2158
+                     /gene="B"
+                     /locus_tag="alpha3p02"
+                     /note="Protein B is required for the assembly of the basic
+                     building block of the Microvirus capsid and is
+                     incorporated into the procapsid. Protein B is displaced by
+                     the protein J/ssDNA complex during assembly and is
+                     therefore not part of the mature virion. Other names:
+                     protein B, gpB. Function: morphogenesis."
+                     /codon_start=1
+                     /transl_table=11
+                     /product="internal scaffolding protein"
+                     /protein_id="NP_039591.1"
+                     /db_xref="GOA:P31278"
+                     /db_xref="InterPro:IPR003513"
+                     /db_xref="UniProtKB/Swiss-Prot:P31278"
+                     /db_xref="GeneID:1260691"
+                     /translation="MQESINGNLSEERISGTQQSETRNGAPVNGSSEQQGTSGTEPNQ
+                     LRFQSSVSDSERERQKAIDLEHRRAAFARHFGCAPGSEKHVENYSSFDEKDTRVQLAE
+                     FYRFNDGHFKKWGYF"
+     gene            2158..2319
+                     /gene="K"
+                     /locus_tag="alpha3p03"
+                     /db_xref="GeneID:1260692"
+     CDS             2158..2319
+                     /gene="K"
+                     /locus_tag="alpha3p03"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="NP_039592.1"
+                     /db_xref="UniProtKB/Swiss-Prot:P31282"
+                     /db_xref="GeneID:1260692"
+                     /translation="MKHVNTLLMQELRLLICELKRLRLSAVSDPDFSQEKIHAELDSL
+                     LCKLSRHFD"
+     gene            2270..2476
+                     /gene="C"
+                     /locus_tag="alpha3p04"
+                     /db_xref="GeneID:1260693"
+     CDS             2270..2476
+                     /gene="C"
+                     /locus_tag="alpha3p04"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="DNA maturation protein"
+                     /protein_id="NP_039593.1"
+                     /db_xref="UniProtKB/Swiss-Prot:P31279"
+                     /db_xref="GeneID:1260693"
+                     /translation="MLSSTRYYASYRATLTKQLMFLTKADFTNDDEKWLNAFGNLLRQ
+                     WFQIEDWKGNHKKLLDDLKKRDYL"
+     gene            2503..2955
+                     /gene="D"
+                     /locus_tag="alpha3p05"
+                     /db_xref="GeneID:1260694"
+     CDS             2503..2955
+                     /gene="D"
+                     /locus_tag="alpha3p05"
+                     /note="240 molecules of protein D form an external
+                     scaffold required for the formation of Microvirus
+                     procapsid. Not present in mature particles. other names:
+                     protein D, gpD; function: morphogenesis"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="external scaffolding protein"
+                     /protein_id="NP_039594.1"
+                     /db_xref="GOA:P08765"
+                     /db_xref="InterPro:IPR004196"
+                     /db_xref="UniProtKB/Swiss-Prot:P08765"
+                     /db_xref="GeneID:1260694"
+                     /translation="MNIVSDVNYATSVAALRMLQASAVLDVTEEDFDFLTGDKIWIAT
+                     DRNRARRCVEACVYGTLDFVGYPRFPAPVEFIAAVIAYYVHPVNVQTACLVMEGAEFS
+                     ENIINGVERPVNAAELFAYTLRIKAGFKETVMDAEENARQKLRANGLK"
+     gene            2675..2902
+                     /gene="E"
+                     /locus_tag="alpha3p06"
+                     /db_xref="GeneID:1260695"
+     CDS             2675..2902
+                     /gene="E"
+                     /locus_tag="alpha3p06"
+                     /note="Microvirus cell lysis protein is a membrane protein
+                     that inhibits MraY, an enzyme required for murein
+                     synthesis, and promotes cell lysis in a manner analogous
+                     to cell wall synthesis inhibitors like penicillin. A host
+                     factor (slyD) is required for stability of protein E.
+                     other names: protein E, gpE; function: phage release by
+                     lysis"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="cell lysis protein"
+                     /protein_id="NP_039595.1"
+                     /db_xref="GOA:P31280"
+                     /db_xref="InterPro:IPR007605"
+                     /db_xref="UniProtKB/Swiss-Prot:P31280"
+                     /db_xref="GeneID:1260695"
+                     /translation="MERWTLLDILAFLLLLSLLLPSLLIMFIPSMYKQHASLWKARSL
+                     AKTLSMASSARLTPLSSSRTPCVLKQDSKKL"
+     gene            2957..3031
+                     /gene="J"
+                     /locus_tag="alpha3p07"
+                     /db_xref="GeneID:1260696"
+     CDS             2957..3031
+                     /gene="J"
+                     /locus_tag="alpha3p07"
+                     /note="Protein J binds to ssDNA Microvirus genomes and is
+                     packaged with the DNA into procapsids. During packaging it
+                     displaces the internal scaffold protein. other names: core
+                     protein, protein J; function: DNA packaging, DNA binding"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="DNA packaging protein"
+                     /protein_id="NP_039596.1"
+                     /db_xref="GOA:P69548"
+                     /db_xref="InterPro:IPR006815"
+                     /db_xref="PDB:1M06"
+                     /db_xref="UniProtKB/Swiss-Prot:P69548"
+                     /db_xref="GeneID:1260696"
+                     /translation="MKKARRSPSRRKGARLWYVGGSQF"
+     gene            3067..4362
+                     /gene="F"
+                     /locus_tag="alpha3p08"
+                     /db_xref="GeneID:1260697"
+     CDS             3067..4362
+                     /gene="F"
+                     /locus_tag="alpha3p08"
+                     /note="60 copies of protein F form the icosahedral capsid
+                     of Microviruses. other names: protein F, gpF; function:
+                     phage structural protein"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="capsid protein"
+                     /protein_id="NP_039597.1"
+                     /db_xref="GOA:P08767"
+                     /db_xref="InterPro:IPR003514"
+                     /db_xref="PDB:1M06"
+                     /db_xref="PDB:1RB8"
+                     /db_xref="UniProtKB/Swiss-Prot:P08767"
+                     /db_xref="GeneID:1260697"
+                     /translation="MSNVQTSAEREIVDLSHLAFDCGMLGRLKTVSWTPVIAGDSFEL
+                     DAVGALRLSPLRRGLAIDSKVDFFTFYIPHRHVYGDQWIQFMRDGVNAQPLPSVTCNR
+                     YPDHAGYVGTIVPANNRIPKFLHQSYLNIYNNYFRAPWMPERTEANPSNLNEDDARYR
+                     FRCCHLKNIWSAPLPPETKLAEEMGIESNSIDIMGLQAAYAQLHTEQERTYFMQRYRD
+                     VISSFGGSTSYDADNRPLLVMHTDFWASGYDVDGTDQSSLGQFSGRVQQTFKHSVPRF
+                     FVPEHGVMMTLALIRFPPISPLEHHYLAGKSQLTYTDLAGDPALIGNLPPREISYRDL
+                     FRDGRSGIKIKVAESIWYRTHPDYVNFKYHDLHGFPFLDDAPGTSTGDNLQEAILVRH
+                     QDYDACFQSQQLLQWNKQARYNVSVYRHMPTVRDSIMTS"
+     gene            4396..4959
+                     /gene="G"
+                     /locus_tag="alpha3p09"
+                     /db_xref="GeneID:1260698"
+     CDS             4396..4959
+                     /gene="G"
+                     /locus_tag="alpha3p09"
+                     /note="A total of 60 copies of protein G are present at
+                     the 12 vertices with 5-fold symmetry of Microvirus
+                     capsids. other names: protein G, gpG; function: phage
+                     minor structural protein"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="major spike protein"
+                     /protein_id="NP_039598.1"
+                     /db_xref="GOA:P31281"
+                     /db_xref="InterPro:IPR003515"
+                     /db_xref="PDB:1M06"
+                     /db_xref="PDB:1RB8"
+                     /db_xref="UniProtKB/Swiss-Prot:P31281"
+                     /db_xref="GeneID:1260698"
+                     /translation="MYQNFVTKHDTAIQTSRFSVTGNVIPAAPTGNIPVINGGSITAE
+                     RAVVNLYANMNVSTSSDGSFIVAMKVDTSPTDPNCVISAGVNLSFAGTSYPIVGIVRF
+                     ESASEQPTSIAGSEVEHYPIEMSVGSGGVCSARDCATVDIHPRTSGNNVFVGVICSSA
+                     KWTSGRVIGTIATTQVIHEYQVLQPLK"
+     gene            5095..>5386
+                     /gene="H"
+                     /locus_tag="alpha3p10"
+                     /db_xref="GeneID:1260699"
+     CDS             5095..>5386
+                     /gene="H"
+                     /locus_tag="alpha3p10"
+                     /note="One molecule of protein H is located at each of the
+                     12 vertices with 5-fold symmetry. Binds to LPS and is
+                     involved in particle adsorption to host cells. Several
+                     protein H molecules enter the host cytoplasm with the
+                     phage genome. other names: protein H, gpH, DNA pilot
+                     protein; function: phage minor structural protein,
+                     adsorption, DNA injection"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="minor spike protein"
+                     /protein_id="NP_039599.1"
+                     /db_xref="GOA:P03650"
+                     /db_xref="InterPro:IPR006777"
+                     /db_xref="UniProtKB/Swiss-Prot:P03650"
+                     /db_xref="GeneID:1260699"
+                     /translation="MLGAVVGGIASALASGAASKLFGGSQRGVSVMQQGAESAGLTNG
+                     GGAISMDNDQGIQSAIQGSNVPPAGQLPESQNSGVMADAGNMLRNAGKSLLDGTIQAG
+                     SDKVKQALIDKLIGGNDAKDRGKATRDYLAAAFPELNPWERAGAGASTAGLESSAQNQ
+                     QKEMLKMQLDNQKDIAKMQMDNNLQIAGIQSATSRQNTKDSVYAQNEMLQYNQRESQA
+                     RVASILANTDLTTKQATHEIMRMALTRAQETGQHLTNSQIMALEKKVYAEIGKIHQDT
+                     QNSRYGSSQVTAAAKDVTNMITDAASGASDWVSQQWNSFFKDGKSNGISLNTRK"
