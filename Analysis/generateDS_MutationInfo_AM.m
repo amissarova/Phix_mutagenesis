@@ -230,7 +230,9 @@ DS.ConservationScore = cell(length(DS) , 1);
 for I = 1:length(DS)
     
     if DS.SynonymousTotalBool(I) == 1
-        DS.ConservationScore{I} = 'S';
+        DS.ConservationScore{I} = 'Synonymous';
+    elseif DS.NonsenseTotalBool(I) == 1
+        DS.ConservationScore{I} = 'Nonsense';
     else
         AA = DS.AA{I};
         AASubstitutes = DS.AASubstitutes{I};
@@ -245,13 +247,13 @@ for I = 1:length(DS)
             else 
                 idx = find(strcmp(D.Gene , Genes{J}) & D.AAPosition == PositionInProtein(J));
                 if isempty(idx) & strcmp(AA{J} , 'STOP') & ~strcmp(AASubstitutes{J} , 'STOP')
-                    DS.ConservationScore{I} = 'N';
+                    DS.ConservationScore{I} = 'Rest';
                     break
                 elseif ~isempty(find(strcmp(D.AASpectrum{idx} , '-')))
                     DS.ConservationScore{I} = 'X';
                     break
                 elseif isempty(find(strcmp(D.AASpectrum{idx} , AASubstitutes{J})))
-                    DS.ConservationScore{I} = 'N';
+                    DS.ConservationScore{I} = 'Rest';
                     break
                 else
                     count = count + 1;
@@ -261,7 +263,7 @@ for I = 1:length(DS)
             
         end
         if count == K
-            DS.ConservationScore{I} = 'C';
+            DS.ConservationScore{I} = 'Conserved';
         end
     end
 end
@@ -272,7 +274,7 @@ save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo.mat' , 'DS');
 load('~/Develop/Phix_mutagenesis/Data/DS_MutationsInfo.mat');
 D = DS(: , {'PositionNum', 'PositionNucleotide' , 'PositionNucleotideSubstitute',...
     'SynonymousTotalBool' , 'MutationType' , 'TriNucleotideContext',...
-    'NonsenseTotalBool'});
+    'NonsenseTotalBool' , 'ConservationScore'});
 export(D , 'file' , '~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo.tab');
 
 
