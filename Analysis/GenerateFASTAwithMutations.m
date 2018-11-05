@@ -22,6 +22,7 @@ addParameter(p,'fasta_out_fn',fasta_out_fn,@isstr);
 
 parse(p,varargin{:}) ;
 s = p.Results ; % create a struct to hold all options & args
+s.start_time = datetime ; 
 
 PROJDIR = '~/Develop/Phix_mutagenesis/'  ;
 
@@ -46,14 +47,14 @@ for I = 1:s.NWTchrs
 end
 
 %% write NSynonVariants, each w/1 synon variant
-synon_idx =  find(s.D.SynonymousTotalBool & s.D.IN_ORF);
-chosen_synon_variants = randsample( synon_idx , s.NSynonVariants);
+s.synon_idx =  find(s.D.SynonymousTotalBool & s.D.IN_ORF);
+s.chosen_synon_variants = randsample( s.synon_idx , s.NSynonVariants);
 s.synon_headers = cell( s.NSynonVariants , 1) ; 
 for I = 1:s.NSynonVariants
     this_seq = s.genome.Sequence ; 
-    pos_to_mutate  = s.D.PositionNum(chosen_synon_variants(I)); 
-    new_nt         = s.D.PositionNucleotideSubstitute{chosen_synon_variants(I)};
-    prev_nt_D      = s.D.PositionNucleotide{chosen_synon_variants(I)};
+    pos_to_mutate  = s.D.PositionNum(s.chosen_synon_variants(I)); 
+    new_nt         = s.D.PositionNucleotideSubstitute{s.chosen_synon_variants(I)};
+    prev_nt_D      = s.D.PositionNucleotide{s.chosen_synon_variants(I)};
     prev_nt_genome =  s.genome.Sequence(pos_to_mutate);
     this_seq(pos_to_mutate) = new_nt ; 
     this_seq_header = sprintf('Syn_%d_%d_%s_%s' ...
@@ -64,5 +65,8 @@ for I = 1:s.NSynonVariants
     s.synon_headers{I} = this_seq_header ;
     fastawrite( s.fasta_out_fn , this_seq_header , this_seq );
 end
+
+s.finish_time = datetime ; 
+save( regexprep(s.fasta_out_fn,'.fasta','.mat') ,  's');
 
 end
