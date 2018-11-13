@@ -1,0 +1,20 @@
+https://www.ncbi.nlm.nih.gov/popset/5815305
+
+https://www.ncbi.nlm.nih.gov/genome/?term=phix174
+
+
+
+1. Escherichia virus phiX174
+Escherichia virus phiX174 RefSeq Genome
+Kingdom: Viruses
+Chromosome: 1
+Genome ID: 55906
+https://www.ncbi.nlm.nih.gov/genome/4241
+
+
+2. Enterobacteria phage phiX174 sensu lato
+Enterobacteria phage phiX174 sensu lato RefSeq Other
+Kingdom: Viruses
+Chromosome: 1
+Genome ID: 4241
+https://www.ncbi.nlm.nih.gov/genome/55906
