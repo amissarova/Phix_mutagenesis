@@ -96,7 +96,29 @@ T.sub_prentnt = categorical( CharMat2CellArray([ char(T.NtSubstitute) char(T.Pre
 T.sub_nt = categorical( CharMat2CellArray([  char(T.NtSubstitute) char(T.Nt)   ] )' );
 T.sub_prentntposnt = categorical( CharMat2CellArray([ char(T.NtSubstitute)   char(T.PreNt)  char(T.Nt)  char(T.PostNt) ] )' );
 
+%% AM: Add mode, inferred std and z-score for each sub_prentnt
+T = table2dataset(T);
+T.sub_prentnt_m_mode = NaN(length(T) , 1);
+T.sub_prentnt_s_mode = NaN(length(T) , 1);
+T.sub_prentnt_z_mode = NaN(length(T) , 1);
 
+unq_sub_prentnt = unique(T.sub_prentnt(T.IS_REF_ALLELE == 0));
+for I = 1:numel(unq_sub_prentnt)
+    idx_temp_sub_prentnt = ismember(T.sub_prentnt , unq_sub_prentnt(I));
+    data_temp_sub_prentnt = T.AlleleFrequency(idx_temp_sub_prentnt);
+    m_mode = modefit(data_temp_sub_prentnt , 0 , [-0.000001:0.000001:0.005]);
+    
+    temp_data = data_temp_sub_prentnt(data_temp_sub_prentnt <= m_mode);
+	data_inferred = [temp_data ; 2*m_mode - temp_data];  
+	s_mode = nanstd(data_inferred);
+    
+    for J = 1:length(idx_temp_sub_prentnt)
+        T.sub_prentnt_m_mode(idx_temp_sub_prentnt(J)) = m_mode;
+        T.sub_prentnt_s_mode(idx_temp_sub_prentnt(J)) = s_mode;
+        T.sub_prentnt_z_mode(idx_temp_sub_prentnt(J)) = (data_temp_sub_prentnt(J) - m_mode)/s_mode;
+    end
+end
+T = dataset2table(T);
 %% add filename
 T.filename = repmat( {pileupCountAllAlleles_file_name} , height(T) , 1);
 
