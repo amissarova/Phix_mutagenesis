@@ -1,4 +1,9 @@
+function T = GenerateSaveTableFromAll_pileupCountAlleles_tabfiles(  ) 
 %% load all Illumina pileupCountAllAlleles tab files, build and save the dataset
+% 
+%
+% 
+
 PROJECT_DIR = '~/Develop/Phix_mutagenesis/';
 addpath_recurse( PROJECT_DIR );
 FILEREGEXP = [ PROJECT_DIR '/Illumina_Data/*.pileupCountAllAlleles.tab' ];
@@ -12,4 +17,7 @@ for fileI = 1:numel(file_list_cell_array)
 end
 
 save( [PROJECT_DIR 'Data/T.mat'] , 'T' );
+
+end
+
 

@@ -91,6 +91,11 @@ for id_I = 1:numel(uid)
     T.zscore_nt(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
 end
 
+%% Categorical values for substitution IDs
+T.sub_prentnt = categorical( CharMat2CellArray([ char(T.NtSubstitute) char(T.PreNt)  char(T.Nt)   ] )' );
+T.sub_nt = categorical( CharMat2CellArray([  char(T.NtSubstitute) char(T.Nt)   ] )' );
+T.sub_prentntposnt = categorical( CharMat2CellArray([ char(T.NtSubstitute)   char(T.PreNt)  char(T.Nt)  char(T.PostNt) ] )' );
+
 
 %% add filename
 T.filename = repmat( {pileupCountAllAlleles_file_name} , height(T) , 1);
