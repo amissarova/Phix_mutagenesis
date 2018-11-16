@@ -31,10 +31,10 @@ for I = 1:numel(ltrs)
     Q.Position =  DATA.pos ;
     Q.Nt = DATA.ref ; 
     Q.NtSubstitute = repmat( ltrs(I) , height(Q),1);
-    Q.total_cov = DATA.cov  ;
+    Q.coverage_total = DATA.cov  ;
     Q.coverage_W  = DATA.covW ; 
     Q.coverage_C  = DATA.covC ; 
-    Q.allele_cov = DATA.(ltrs{I}) ;
+    Q.AlleleCount = DATA.(ltrs{I}) ;
     T = vertcat( T , Q );
 end
 
@@ -59,17 +59,35 @@ T.PostNt = categorical(cellstr(T.PostNt)) ;
 
 %% calculate allele frequency
 idx_is_crick = T.NtSubstitute == 'a' | T.NtSubstitute == 'c' | T.NtSubstitute == 't' | T.NtSubstitute == 'g';
-T.AlleleFrequency = T.allele_cov ./ T.coverage_W ; 
-T.AlleleFrequency(idx_is_crick) = T.allele_cov(idx_is_crick) ./ T.coverage_C(idx_is_crick) ; 
+T.AlleleFrequency = T.AlleleCount ./ T.coverage_W ; 
+T.AlleleFrequency(idx_is_crick) = T.AlleleCount(idx_is_crick) ./ T.coverage_C(idx_is_crick) ; 
 
-%% calculate zscores
+%% calculate zscores for Nt alone, prent and prent-postnt
 id = [ char(T.PreNt) char(T.Nt) char(T.NtSubstitute)] ;  % unique ID to calc z-score
 id = CharMat2CellArray(id)' ; 
 uid = unique(id) ; 
-T.zscore = NaN(height(T),1);
+T.zscore_prent = NaN(height(T),1);
 for id_I = 1:numel(uid)
     idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
-    T.zscore(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
+    T.zscore_prent(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
+end
+
+id = [ char(T.PreNt) char(T.Nt) char(T.NtSubstitute) char(T.PostNt)] ;  % unique ID to calc z-score
+id = CharMat2CellArray(id)' ; 
+uid = unique(id) ; 
+T.zscore_prentpostnt = NaN(height(T),1);
+for id_I = 1:numel(uid)
+    idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
+    T.zscore_prentpostnt(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
+end
+
+id = [char(T.Nt) char(T.NtSubstitute)] ;  % unique ID to calc z-score
+id = CharMat2CellArray(id)' ; 
+uid = unique(id) ; 
+T.zscore_nt = NaN(height(T),1);
+for id_I = 1:numel(uid)
+    idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
+    T.zscore_nt(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
 end
 
 
