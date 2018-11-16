@@ -6,7 +6,7 @@ function T = GenerateSaveTableFromAll_pileupCountAlleles_tabfiles(  )
 
 PROJECT_DIR = '~/Develop/Phix_mutagenesis/';
 addpath_recurse( PROJECT_DIR );
-FILEREGEXP = [ PROJECT_DIR '/Illumina_Data/*.pileupCountAllAlleles.tab' ];
+FILEREGEXP = [ PROJECT_DIR '/Illumina_Data/*/*.tab' ];
 file_list = dir(FILEREGEXP);
 file_list_cell_array = strcat({file_list.folder} ,filesep,{file_list.name}) ; 
 
