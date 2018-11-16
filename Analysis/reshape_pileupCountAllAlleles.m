@@ -64,32 +64,32 @@ T.AlleleFrequency = T.AlleleCount ./ T.coverage_W ;
 T.AlleleFrequency(idx_is_crick) = T.AlleleCount(idx_is_crick) ./ T.coverage_C(idx_is_crick) ; 
 
 %% calculate zscores for Nt alone, prent and prent-postnt
-id = [ char(T.PreNt) char(T.Nt) char(T.NtSubstitute)] ;  % unique ID to calc z-score
-id = CharMat2CellArray(id)' ; 
-uid = unique(id) ; 
-T.zscore_prent = NaN(height(T),1);
-for id_I = 1:numel(uid)
-    idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
-    T.zscore_prent(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
-end
-
-id = [ char(T.PreNt) char(T.Nt) char(T.NtSubstitute) char(T.PostNt)] ;  % unique ID to calc z-score
-id = CharMat2CellArray(id)' ; 
-uid = unique(id) ; 
-T.zscore_prentpostnt = NaN(height(T),1);
-for id_I = 1:numel(uid)
-    idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
-    T.zscore_prentpostnt(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
-end
-
-id = [char(T.Nt) char(T.NtSubstitute)] ;  % unique ID to calc z-score
-id = CharMat2CellArray(id)' ; 
-uid = unique(id) ; 
-T.zscore_nt = NaN(height(T),1);
-for id_I = 1:numel(uid)
-    idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
-    T.zscore_nt(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
-end
+% id = [ char(T.PreNt) char(T.Nt) char(T.NtSubstitute)] ;  % unique ID to calc z-score
+% id = CharMat2CellArray(id)' ; 
+% uid = unique(id) ; 
+% T.zscore_prent = NaN(height(T),1);
+% for id_I = 1:numel(uid)
+%     idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
+%     T.zscore_prent(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
+% end
+% 
+% id = [ char(T.PreNt) char(T.Nt) char(T.NtSubstitute) char(T.PostNt)] ;  % unique ID to calc z-score
+% id = CharMat2CellArray(id)' ; 
+% uid = unique(id) ; 
+% T.zscore_prentpostnt = NaN(height(T),1);
+% for id_I = 1:numel(uid)
+%     idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
+%     T.zscore_prentpostnt(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
+% end
+% 
+% id = [char(T.Nt) char(T.NtSubstitute)] ;  % unique ID to calc z-score
+% id = CharMat2CellArray(id)' ; 
+% uid = unique(id) ; 
+% T.zscore_nt = NaN(height(T),1);
+% for id_I = 1:numel(uid)
+%     idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
+%     T.zscore_nt(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
+% end
 
 %% Categorical values for substitution IDs
 T.sub_prentnt = categorical( CharMat2CellArray([ char(T.NtSubstitute) char(T.PreNt)  char(T.Nt)   ] )' );
@@ -104,10 +104,12 @@ T.sub_prentnt_z_mode = NaN(length(T) , 1);
 
 unq_sub_prentnt = unique(T.sub_prentnt(T.IS_REF_ALLELE == 0));
 for I = 1:numel(unq_sub_prentnt)
-    idx_temp_sub_prentnt = ismember(T.sub_prentnt , unq_sub_prentnt(I));
+    idx_temp_sub_prentnt = find(ismember(T.sub_prentnt , unq_sub_prentnt(I)));
     data_temp_sub_prentnt = T.AlleleFrequency(idx_temp_sub_prentnt);
     m_mode = modefit(data_temp_sub_prentnt , 0 , [-0.000001:0.000001:0.005]);
     
+    % use the first half (before mode) to infer distribution, symmetrical
+    % around mode
     temp_data = data_temp_sub_prentnt(data_temp_sub_prentnt <= m_mode);
 	data_inferred = [temp_data ; 2*m_mode - temp_data];  
 	s_mode = nanstd(data_inferred);
