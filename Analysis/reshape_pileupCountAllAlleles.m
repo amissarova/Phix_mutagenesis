@@ -44,6 +44,7 @@ T.Nt = categorical(T.Nt) ;
 T.NtSubstitute = categorical(T.NtSubstitute) ; 
 
 T.IS_REF_ALLELE = (T.Nt == T.NtSubstitute) | (char(T.Nt) == upper(char(T.NtSubstitute))) ; 
+T.IS_ALLELE_W = char(T.NtSubstitute) == upper(char(T.NtSubstitute)) ; 
 
 %% pre-nt & post-nt for the circular genome
 seq = char(T.Nt(T.NtSubstitute=='A'))' ; 
