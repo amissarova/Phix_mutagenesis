@@ -356,7 +356,22 @@ for I = 1:length(DS)
 end
 save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo_Ilumina.mat' , 'DS'); 
 
+%% cosmetic changes and convert for the table
+load('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo_Ilumina.mat');
+D = DS;
+D.NtSubstitute = lower(D.NtSubstitute);
+DS = vertcat(DS , D);
+DS = sortrows(DS , {'Position' , 'NtSubstitute'});
+DS.PreNtNtNtSub = categorical(DS.PreNtNtNtSub);
+DS.Nt = categorical(DS.Nt);
+DS.PostNt = categorical(DS.PostNt);
+DS.PreNt = categorical(DS.PreNt);
+DS.NtSubstitute = categorical(DS.NtSubstitute);
+DS = DS(: , [1:42]);
 %%
+DS = dataset2table(DS);
+ANNO_SUBSTITUTION = DS;
+save('~/Develop/Phix_Mutagenesis/Data/ANNO_SUBSTITUTION.mat' , 'ANNO_SUBSTITUTION');
 
 
 
@@ -368,82 +383,3 @@ save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo_Ilumina.mat' , 'DS');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%% OLD STUFF, keep in case
-%% 1. Conservation Score
-% % add a score for conservation
-% load('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo_Ilumina.mat'); 
-% load('~/Develop/Phix_Mutagenesis/Data/DS_PhylogeneticInfo.mat');   
-% % add vector of alternatives
-% 
-% DS.ConservationScore = cell(length(DS) , 1);
-% for I = 1:length(DS)
-%     
-%     if DS.SynonymousTotalBool(I) == 1
-%         DS.ConservationScore{I} = 'Synonymous';
-%     elseif DS.NonsenseTotalBool(I) == 1
-%         DS.ConservationScore{I} = 'Nonsense';
-%     else
-%         AA = DS.AAs{I};
-%         AASubstitutes = DS.AASubstitutes{I};
-%         PositionInProtein = DS.PositionInProteins{I};
-%         Genes = DS.Genes{I};
-%         K = length(AA);
-%         count = 0;
-%         count_X = 0;
-%         for J = 1:K
-%             if strcmp(AA{J} , AASubstitutes{J})
-%                 count = count + 1;
-%                 
-%                 %continue
-%             else 
-%                 idx = find(strcmp(D.Gene , Genes{J}) & D.AAPosition == PositionInProtein(J));
-%                 if isempty(idx) & strcmp(AA{J} , 'STOP') & ~strcmp(AASubstitutes{J} , 'STOP')
-%                     DS.ConservationScore{I} = 'Nonstop';
-%                     
-%                     break
-%                 elseif ~isempty(find(strcmp(D.AASpectrum{idx} , '-')))
-%                     count_X = count_X+1;
-%                     continue
-%                 elseif isempty(find(strcmp(D.AASpectrum{idx} , AASubstitutes{J})))
-%                     continue
-%                 else
-%                     count = count + 1;
-%                     continue
-%                 end
-%             end
-%         end
-%         if isempty(DS.ConservationScore{I})
-%             if count_X > 0
-%                 DS.ConservationScore{I} = 'X';
-%             elseif count == K
-%                 DS.ConservationScore{I} = 'Conserved';
-%             else
-%                 DS.ConservationScore{I} = 'Rest';
-%             end
-%         end
-%     end
-% end
-% save('~/Develop/Phix_Mutagenesis/Data/DS_MutationsInfo_Ilumina.mat' , 'DS'); 
-% 
-% 
