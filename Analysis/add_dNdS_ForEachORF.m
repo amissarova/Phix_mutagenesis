@@ -46,6 +46,10 @@ anno = vertcat(anno, anno_ORF_shift_1 , anno_ORF_shift_2);
 load('~/Develop/Phix_mutagenesis/Data/T.mat');
 % eliminate sameNt right here to decrease memory consumption 
 T = T(T.IS_REF_ALLELE == 0 , :);
+
+% add boolean ID if substitution is from W or C strand
+T.IS_ALLELE_W = char(T.NtSubstitute) == upper(char(T.NtSubstitute)) ;
+
 % duplicate genome and add to the current position of length of genome and
 % concatenate (to facilitate work with ORFs that coincide with the end of genome)
 N_Phix = max(T.Position);
@@ -57,39 +61,61 @@ T = sortrows(T , {'Position' , 'NtSubstitute'});
 % each filename
 ANNO_GENES = table();
 % create a list of unique Illumina datasets
-unq_id = unique(T.filename);
+unq_id = categories(T.filename);
+
+%generate quantile-grid for z-score and raw Illumina error rate
+K = 200;
+
+data_AlleleFrequency = T.AlleleFrequency;
+data_sub_prentnt_z_mode = T.sub_prentnt_z_mode;
+
+AlleleFrequency_grid_error_rate = NaN(K , 1);
+sub_prentnt_z_mode_grid_error_rate = NaN(K , 1);
+for I = 1:K
+    AlleleFrequency_grid_error_rate(I) = quantile(data_AlleleFrequency , (I-1)/K);
+    sub_prentnt_z_mode_grid_error_rate(I) = quantile(data_sub_prentnt_z_mode , (I-1)/K);
+end
+
+%%
+% for each filename generate it's DS w dNdS for each ORF (real and shifted)
 for I1 = 1:length(unq_id)
     temp_anno = anno;
     temp_anno.filename = cell(height(anno) , 1); 
+    temp_anno.AlleleFrequency_grid_error_rate = cell(height(anno) , 1);
     temp_anno.sub_prentnt_z_mode_grid_error_rate = cell(height(anno) , 1); 
     for I = 1:height(temp_anno)
         temp_anno.filename{I} = unq_id{I1};
-        temp_anno.sub_prentnt_z_mode_grid_error_rate{I} = [-4:0.1:20];
+        temp_anno.AlleleFrequency_grid_error_rate{I} = AlleleFrequency_grid_error_rate;
+        temp_anno.sub_prentnt_z_mode_grid_error_rate{I} = sub_prentnt_z_mode_grid_error_rate;
     end
+    temp_anno.AlleleFrequency_dNdS_W = cell(height(anno) , 1);
+    temp_anno.AlleleFrequency_dNdS_C = cell(height(anno) , 1);
     temp_anno.sub_prentnt_z_mode_dNdS_W = cell(height(anno) , 1); 
     temp_anno.sub_prentnt_z_mode_dNdS_C = cell(height(anno) , 1); 
     for I = 1:height(temp_anno)
         fprintf('Processed file %d, %.2f.\n' , I1, I/height(anno));
         % 2. select ORF and correct filename from whole DS
-        T_ORF = T(T.Position >= temp_anno.PositionStart(I) & T.Position <= temp_anno.PositionEnd(I) & strcmp(unq_id{I1}, T.filename), :);
+        T_ORF = T(T.Position >= temp_anno.PositionStart(I) & T.Position <= temp_anno.PositionEnd(I) & ismember(T.filename , unq_id(I)), :);
         
         % 3. for given ORF add syn-bool for each position/substitution
         T_ORF = addSynOrNonsynBoolFlg(T_ORF);
         
-        % for given ORF and given proxy of error rate (could be z-score or raw error rate from Illumina or something else)
-        % and given grid of error rate -- calculate dNdS
-        z_grid_error_rate = temp_anno.sub_prentnt_z_mode_grid_error_rate{I};
-        
         % 4. add dNdS-array
-        % only fro reads from W-strand
-        idx_W = find(strcmp(char(T_ORF.NtSubstitute(I)) , upper(char(T_ORF.NtSubstitute(I)))));
-        dNdS_W = calculate_dNdS(T_ORF(idx_W,:) , 'sub_prentnt_z_mode' , z_grid_error_rate , 1);
+        % only fro reads from W-strand, z-score
+        dNdS_W = calculate_dNdS(T_ORF(T_ORF.IS_ALLELE_W == 1,:) , 'sub_prentnt_z_mode' , temp_anno.sub_prentnt_z_mode_grid_error_rate{I} , 1);
         temp_anno.sub_prentnt_z_mode_dNdS_W{I} = dNdS_W;
         
-        % only for reads from C-strand
-        idx_C = find(~strcmp(char(T_ORF.NtSubstitute(I)) , upper(char(T_ORF.NtSubstitute(I)))));
-        dNdS_C = calculate_dNdS(T_ORF(idx_C,:) , 'sub_prentnt_z_mode' , z_grid_error_rate , 1);
+        % only for reads from C-strand, z-score
+        dNdS_C = calculate_dNdS(T_ORF(T_ORF.IS_ALLELE_W == 0,:) , 'sub_prentnt_z_mode' , temp_anno.sub_prentnt_z_mode_grid_error_rate{I} , 1);
         temp_anno.sub_prentnt_z_mode_dNdS_C{I} = dNdS_C;
+        
+        % only fro reads from W-strand, raw Illumina error rate
+        dNdS_W = calculate_dNdS(T_ORF(T_ORF.IS_ALLELE_W == 1,:) , 'AlleleFrequency' , temp_anno.AlleleFrequency_grid_error_rate{I} , 1);
+        temp_anno.AlleleFrequency_dNdS_W{I} = dNdS_W;
+        
+        % only for reads from C-strand, z-score, raw Illumina error rate
+        dNdS_C = calculate_dNdS(T_ORF(T_ORF.IS_ALLELE_W == 0,:) , 'AlleleFrequency' , temp_anno.AlleleFrequency_grid_error_rate{I} , 1);
+        temp_anno.AlleleFrequency_dNdS_C{I} = dNdS_C;
     end
     if isempty(ANNO_GENES)
         ANNO_GENES = temp_anno;
@@ -100,4 +126,3 @@ for I1 = 1:length(unq_id)
 end
 save('~/Develop/Phix_mutagenesis/Data/ANNO_GENES.mat' , 'ANNO_GENES');
 
-%% 
