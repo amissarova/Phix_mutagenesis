@@ -1,0 +1,38 @@
+Mutant ID	Mutation	Amino acid substitution	Gene	Function
+P1	c357a	None	C	Stage III replication
+P3	a402t	Thr402Ser	D	External scaffolding and capsid morphogenesis
+P5	t825a	Leu146Ile/Asn86Lys	D/E	External scaffold protein/Host cell lysis
+P6	a827t	Leu146Ile/Tyr87Phe	D/E	External scaffold protein/Host cell lysis
+P7	g915c	Gly23Ala	J	DNA binding protein; DNA packaging
+P9	t1006g	None	F	Major coat protein
+P10	c1023a	Ala8Asp	F	Major coat protein
+P11	c1174t	None	F	Major coat protein
+P12	c1217t	Pro73Ser	F	Major coat protein
+P14	g1238c	Glu80Gln	F	Major coat protein
+P15	a1251c	Lys84Thr	F	Major coat protein
+P16	a1295c	Asn99Thr	F	Major coat protein
+P17	t1432a	None	F	Major coat protein
+P18	t1516c	None	F	Major coat protein
+P19	t1663g	None	F	Major coat protein
+P23	t1870g	None	F	Major coat protein
+P25	g2511t	None	G	Major spike protein
+P26	t2562a	Phe56Leu	G	Major spike protein
+P27	t2630a	Ile79Asn	G	Major spike protein
+P29	t3233g	Asp101Glu	H	DNA injection, piloting
+P30	g3236a	None	H	DNA injection
+P32	g3377t	Glu149Asp	H	DNA injection
+P33	g3422c	Glu164Asp	H	DNA injection
+P35	t3569c	None	H	DNA injection
+P36	g3599t	Gln223His	H	DNA injection
+P37	g3683c	Met251Ile	H	DNA injection
+P39	t4201a	Val74Asp	A	Stage II and Stage III replication
+P41	a4458c	Ile160Leu	A	Stage II and Stage III replication
+P42	t4628g	Asn216Lys/Asn44Lys	A	Stage II and Stage III replication
+P43	t4643g	None /None	A	Stage II and Stage III replication
+P45	c4972g	Pro331Arg/Pro159Arg	A	Stage II and Stage III replication
+P47	a5287g	Lys436Arg/None	A/B	Replication/Internal scaffolding protein
+P48	t5344g	Phe455Cys/Ile90Met	A/B	Replication/Internal scaffolding protein
+P49	a510g	Lys41STOP	D	External scaffolding and capsid morphogenesis
+P52	t2350a	None	Intergenic	Primosome binding site, transcription terminator
+P54	c5192g	Cys404Try/Cys232Try/Leu40Val	A	Stage II and Stage III replication
+2009).
