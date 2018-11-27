@@ -1,6 +1,8 @@
 %% load data 
+addpath(genpath('~/Develop/Phix_mutagenesis/'));
+%load Data/T.mat
+%%
 T = GenerateSaveTableFromAll_pileupCountAlleles_tabfiles(); 
-
 %%
 load ../Data/Stat
 D.Nt = categorical(D.Nt);
@@ -13,22 +15,24 @@ D.ConservationScore = categorical(D.ConservationScore);
 
 vn = {'SynonymousTotalBool' 'NonsenseTotalBool' 'MutationType' 'ConservationScore' 'IN_ORF' 'Position' 'Nt' 'NtSubstitute'};
 R = innerjoin( T , dataset2table(D(:,vn)) ,  'Key', {'Position' 'Nt' 'NtSubstitute'});
-%%
-fn = regexprep( T.filename , '^.*\/','');
-fn = regexprep( fn , '\.tab$','');
-T.fn = regexprep( fn , '_',' ');
-ufn = unique(T.fn);
 
-T = sortrows(T,{'fn' 'Position' 'Nt' 'NtSubstitute'},'ascend');
-data = T.sub_prentnt_z_mode ; 
+%% make per-file matrix of z scores
+% % fn = regexprep( string(T.filename) , '^.*\/','');
+% % fn = regexprep( fn , '\.tab$','');
+% % T.fn = regexprep( fn , '_',' ');
+
+T = sortrows(T,{'filename' 'Position' 'Nt' 'NtSubstitute'},'ascend');
+ufn = unique(T.filename);
+%% build matrix
+data = T.AlleleFrequency ; 
 
 dmat = reshape( data , [] , numel(ufn));
 
 
-%%
 figure ; 
-imagesc(corr(dmat,'rows','complete','type','Spearman'))
+imagesc(corr(dmat,'rows','complete','type','Spearman') , [0.4 1])
 colorbar
+title('Allele Frequency')
 
 %%
 R.zGT3 = R.sub_prentnt_z_mode > 3 ; 

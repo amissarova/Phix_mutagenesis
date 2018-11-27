@@ -64,40 +64,13 @@ idx_is_crick = T.NtSubstitute == 'a' | T.NtSubstitute == 'c' | T.NtSubstitute ==
 T.AlleleFrequency = T.AlleleCount ./ T.coverage_W ; 
 T.AlleleFrequency(idx_is_crick) = T.AlleleCount(idx_is_crick) ./ T.coverage_C(idx_is_crick) ; 
 
-%% calculate zscores for Nt alone, prent and prent-postnt
-% id = [ char(T.PreNt) char(T.Nt) char(T.NtSubstitute)] ;  % unique ID to calc z-score
-% id = CharMat2CellArray(id)' ; 
-% uid = unique(id) ; 
-% T.zscore_prent = NaN(height(T),1);
-% for id_I = 1:numel(uid)
-%     idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
-%     T.zscore_prent(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
-% end
-% 
-% id = [ char(T.PreNt) char(T.Nt) char(T.NtSubstitute) char(T.PostNt)] ;  % unique ID to calc z-score
-% id = CharMat2CellArray(id)' ; 
-% uid = unique(id) ; 
-% T.zscore_prentpostnt = NaN(height(T),1);
-% for id_I = 1:numel(uid)
-%     idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
-%     T.zscore_prentpostnt(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
-% end
-% 
-% id = [char(T.Nt) char(T.NtSubstitute)] ;  % unique ID to calc z-score
-% id = CharMat2CellArray(id)' ; 
-% uid = unique(id) ; 
-% T.zscore_nt = NaN(height(T),1);
-% for id_I = 1:numel(uid)
-%     idx_into_T = ismember(id,uid{id_I}) & ~T.IS_REF_ALLELE ;
-%     T.zscore_nt(idx_into_T) = zscore(T.AlleleFrequency(idx_into_T)) ; 
-% end
-
 %% Categorical values for substitution IDs
 T.sub_prentnt = categorical( CharMat2CellArray([ char(T.NtSubstitute) char(T.PreNt)  char(T.Nt)   ] )' );
 T.sub_nt = categorical( CharMat2CellArray([  char(T.NtSubstitute) char(T.Nt)   ] )' );
 T.sub_prentntposnt = categorical( CharMat2CellArray([ char(T.NtSubstitute)   char(T.PreNt)  char(T.Nt)  char(T.PostNt) ] )' );
 
-%% AM: Add mode, inferred std and z-score for each sub_prentnt
+%% %% calculate zscores for Nt alone, prent and prent-postnt
+% AM: Add mode, inferred std and z-score for each sub_prentnt
 T.sub_prentnt_m_mode = NaN(height(T) , 1);
 T.sub_prentnt_s_mode = NaN(height(T) , 1);
 T.sub_prentnt_z_mode = NaN(height(T) , 1);
@@ -117,7 +90,26 @@ for I = 1:numel(unq_sub_prentnt)
     T.sub_prentnt_s_mode(idx_this_sub_prentnt) = s_mode ; 
     T.sub_prentnt_z_mode(idx_this_sub_prentnt) = (data_temp_sub_prentnt - m_mode) ./ s_mode ;
 end
+
+% for pre-nt-post tri-mer
+T.sub_prentntpostnt_m_mode = NaN(height(T) , 1);
+T.sub_prentntpostnt_s_mode = NaN(height(T) , 1);
+T.sub_prentntpostnt_z_mode = NaN(he ight(T) , 1);
+
+unq_sub_prentntpostnt = unique(T.sub_prentntposnt(T.IS_REF_ALLELE == 0));
+for I = 1:numel(unq_sub_prentntpostnt)
+    idx = ismember(T.sub_prentntposnt , unq_sub_prentntpostnt(I)) ;
+    data_tmp = T.AlleleFrequency(idx) ;
+    m_mode = modefit(data_tmp , 0 , linspace(0,prctile(T.AlleleFrequency(~T.IS_REF_ALLELE),99.9),1e3) );
+
+    allele_freq_left_half = data_tmp(data_tmp <= m_mode);
+	data_inferred = [allele_freq_left_half ; 2*m_mode - allele_freq_left_half];  
+	s_mode = nanstd(data_inferred);
+    T.sub_prentntpostnt_m_mode(idx) = m_mode ; 
+    T.sub_prentntpostnt_s_mode(idx) = s_mode ; 
+    T.sub_prentntpostnt_z_mode(idx) = (data_tmp - m_mode) ./ s_mode ;
+end
 %% add filename
 T.filename = repmat( {pileupCountAllAlleles_file_name} , height(T) , 1);
-
+T.filename = categorical(T.filename) ; 
 end
