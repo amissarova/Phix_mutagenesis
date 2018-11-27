@@ -1,4 +1,4 @@
-Mutant ID	Mutation	Amino acid substitution	Gene	Function
+MutantID	Mutation	Amino acid substitution	Gene	Function
 P1	c357a	None	C	Stage III replication
 P3	a402t	Thr402Ser	D	External scaffolding and capsid morphogenesis
 P5	t825a	Leu146Ile/Asn86Lys	D/E	External scaffold protein/Host cell lysis
@@ -35,4 +35,3 @@ P48	t5344g	Phe455Cys/Ile90Met	A/B	Replication/Internal scaffolding protein
 P49	a510g	Lys41STOP	D	External scaffolding and capsid morphogenesis
 P52	t2350a	None	Intergenic	Primosome binding site, transcription terminator
 P54	c5192g	Cys404Try/Cys232Try/Leu40Val	A	Stage II and Stage III replication
-2009).
