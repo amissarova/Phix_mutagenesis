@@ -2,7 +2,7 @@
 PDIR = '~/Develop/Phix_mutagenesis/' ; 
 load([PDIR '/Data/T.mat']);
 
-% set labels and groups for boxplotting allele freqs
+% remove unneeded rows
 idx = ~T.IS_REF_ALLELE & T.NtSubstitute~='a'  & T.NtSubstitute~='c'   & T.NtSubstitute~='t'   & T.NtSubstitute~='g' ;
 T = T(idx,:);
 

@@ -43,8 +43,8 @@ T = sortrows(T , {'Position' 'Nt' 'NtSubstitute'},'ascend');
 T.Nt = categorical(T.Nt) ;
 T.NtSubstitute = categorical(T.NtSubstitute) ; 
 
-T.IS_REF_ALLELE = (T.Nt == T.NtSubstitute) | (char(T.Nt) == upper(char(T.NtSubstitute))) ; 
-T.IS_ALLELE_W = char(T.NtSubstitute) == upper(char(T.NtSubstitute)) ; 
+T.IS_REF_ALLELE = logical( (T.Nt == T.NtSubstitute) | (char(T.Nt) == upper(char(T.NtSubstitute))) ); 
+T.IS_ALLELE_W = logical( char(T.NtSubstitute) == upper(char(T.NtSubstitute)) ) ; 
 
 %% pre-nt & post-nt for the circular genome
 seq = char(T.Nt(T.NtSubstitute=='A'))' ; 
@@ -72,7 +72,7 @@ T.sub_prentntposnt = categorical( CharMat2CellArray([ char(T.NtSubstitute)   cha
 %% %% calculate zscores for Nt alone, prent and prent-postnt
 % AM: Add mode, inferred std and z-score for each sub_prentnt
 T.sub_prentnt_m_mode = NaN(height(T) , 1);
-T.sub_prentnt_s_mode = NaN(height(T) , 1);
+%T.sub_prentnt_s_mode = NaN(height(T) , 1);
 T.sub_prentnt_z_mode = NaN(height(T) , 1);
 
 unq_sub_prentnt = unique(T.sub_prentnt(T.IS_REF_ALLELE == 0));
@@ -87,14 +87,14 @@ for I = 1:numel(unq_sub_prentnt)
 	data_inferred = [allele_freq_left_half ; 2*m_mode - allele_freq_left_half];  
 	s_mode = nanstd(data_inferred);
     T.sub_prentnt_m_mode(idx_this_sub_prentnt) = m_mode ; 
-    T.sub_prentnt_s_mode(idx_this_sub_prentnt) = s_mode ; 
+%    T.sub_prentnt_s_mode(idx_this_sub_prentnt) = s_mode ; 
     T.sub_prentnt_z_mode(idx_this_sub_prentnt) = (data_temp_sub_prentnt - m_mode) ./ s_mode ;
 end
 
 % for pre-nt-post tri-mer
 T.sub_prentntpostnt_m_mode = NaN(height(T) , 1);
-T.sub_prentntpostnt_s_mode = NaN(height(T) , 1);
-T.sub_prentntpostnt_z_mode = NaN(he ight(T) , 1);
+%T.sub_prentntpostnt_s_mode = NaN(height(T) , 1);
+T.sub_prentntpostnt_z_mode = NaN(height(T) , 1);
 
 unq_sub_prentntpostnt = unique(T.sub_prentntposnt(T.IS_REF_ALLELE == 0));
 for I = 1:numel(unq_sub_prentntpostnt)
@@ -106,10 +106,18 @@ for I = 1:numel(unq_sub_prentntpostnt)
 	data_inferred = [allele_freq_left_half ; 2*m_mode - allele_freq_left_half];  
 	s_mode = nanstd(data_inferred);
     T.sub_prentntpostnt_m_mode(idx) = m_mode ; 
-    T.sub_prentntpostnt_s_mode(idx) = s_mode ; 
+%    T.sub_prentntpostnt_s_mode(idx) = s_mode ; 
     T.sub_prentntpostnt_z_mode(idx) = (data_tmp - m_mode) ./ s_mode ;
 end
 %% add filename
 T.filename = repmat( {pileupCountAllAlleles_file_name} , height(T) , 1);
 T.filename = categorical(T.filename) ; 
+
+%% shrink the table so that it takes up less space. try to keep under the 50MB github limit
+T.coverage_total = [] ;
+T.coverage_C = uint32( T.coverage_C ) ; 
+T.coverage_W = uint32( T.coverage_W ) ; 
+T.AlleleCount = uint32( T.AlleleCount ) ; 
+T.Position = uint32( T.Position ) ; 
+
 end
